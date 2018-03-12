@@ -32,3 +32,9 @@
 `python plot_benefit_2.py`
 `python plot_benefit_3.py`
 
+## Plot co-running polybench kernels ##
+```
+python plot_coexist.py
+python plot_comerge.py
+python plot_collocation.py
+```
