@@ -1,0 +1,117 @@
+\documentclass[sigconf]{acmart}
+
+%\settopmatter{printacmref=false} % Removes citation information below abstract
+%\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+%\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{verbatim}
+
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{caption}
+
+\newcommand{\AG}[1]{\textcolor{red}{#1}}
+\newcommand{\TD}[1]{\textcolor{blue}{#1}}
+\setcopyright{rightsretained}
+
+
+\usepackage{amsmath}
+
+\usepackage[inline]{enumitem}
+
+\newenvironment{tightitemize}%
+	 {\begin{list}{$\bullet$}{%
+ 		\setlength{\leftmargin}{10pt}
+        \setlength{\itemsep}{0pt}%
+        \setlength{\parsep}{0pt}%
+        \setlength{\topsep}{0pt}%
+        \setlength{\parskip}{0pt}%
+        }%
+ }%
+{\end{list}}
+
+\newcounter{tecounter}
+\newenvironment{tightenumerate}%
+ {\begin{list}{\arabic{tecounter}.}{%
+ 		\usecounter{tecounter}
+ 		\setlength{\leftmargin}{10pt}
+        \setlength{\itemsep}{0pt}%
+        \setlength{\parsep}{0pt}%
+        \setlength{\topsep}{0pt}%
+        \setlength{\parskip}{0pt}%
+        }%
+ }%
+{\end{list}}%
+
+
+\begin{document}
+
+\title{CoMerge: Toward Efficient Data Placement in Shared Heterogeneous Memory Systems}
+
+\author{Thaleia Dimitra Doudali}
+\affiliation{%
+\institution{Georgia Institute of Technology}
+}
+\email{thdoudali@gatech.edu} 
+
+\author{Ada Gavrilovska}
+\affiliation{%
+\institution{Georgia Institute of Technology}
+}
+\email{ada@cc.gatech.edu} 
+
+
+
+% Use the following at camera-ready time to suppress page numbers.
+% Comment it out when you first submit the paper for review.
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+
+\input{abstract}
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10010583.10010786.10010787</concept_id>
+<concept_desc>Hardware~Analysis and design of emerging devices and systems</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
+<concept_id>10010583.10010786.10010787.10010788</concept_id>
+<concept_desc>Hardware~Emerging architectures</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
+<concept_id>10010583.10010786.10010787.10010791</concept_id>
+<concept_desc>Hardware~Emerging tools and methodologies</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[300]{Hardware~Analysis and design of emerging devices and systems}
+\ccsdesc[300]{Hardware~Emerging architectures}
+\ccsdesc[300]{Hardware~Emerging tools and methodologies}
+
+\keywords{Hybrid Memory Management, Shared Heterogeneous Memory Systems, Data Tiering}
+
+\copyrightyear{2017} 
+\acmYear{2017} 
+\setcopyright{acmcopyright}
+\acmConference{MEMSYS 2017}{October 2--5, 2017}{Alexandria, VA, USA}\acmPrice{15.00}\acmDOI{10.1145/3132402.3132418}
+\acmISBN{978-1-4503-5335-9/17/10}
+
+\maketitle
+
+\input{introduction}
+\input{methodology}
+\input{analysis}
+\input{future}
+\input{conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{memspan}
+
+\end{document}

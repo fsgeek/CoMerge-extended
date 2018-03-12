@@ -1,0 +1,84 @@
+\section{Introduction}
+\label{sec:intro}
+
+Data-intensive applications pose demands for memory capacity and speeds that cannot be addressed with DRAM, given its cost and scaling issues. As a result, a plethora of new memory technologies have emerged -- from fast, but small-capacity High Bandwidth Memory (HBM), to much slower and larger non-volatile memories (NVM). 
+Thus, future systems will couple small portions of ``fast'' memory (DRAM or HBM) with larger amounts of ``slow'' memory (NVMs, or off-chip DRAM relative to on-chip memory), creating a heterogeneous memory substrate. 
+
+In such hybrid memory systems, data-intensive applications, that require significant amounts of memory capacity, will end up spanning their dataset across both fast and slow memory components. Careful management of the dataset mapping is necessary in order to maximize the utility of the available fast memory, and achieve application performance that approaches a limit equivalent to an all-fast-memory mapping. 
+
+There has already been progress on developing support for data placement, i.e., tiering, and for dynamic data management across memory components in a hybrid memory system. Most of the hardware or system-level solutions are focused on improving over current heterogeneity-unaware techniques, however there continues to be a significant gap relative to the ideal all-fast-memory executions~\cite{sudarsun:isca17,Chou:Batman}. To bridge this gap, new interfaces~\cite{memkind} and application profiling methodologies~\cite{Dulloor:tiering,Shen:dataplacer,Pena:knapsack} are being proposed. The goal of these approaches is to allow application developers to perform {\em a-priori} detailed profiling of the application's use of its different data structures, and based on some notion of cost, establish partial ordering of the data structures (or regions of memory). This ordering is then used to prioritize the placement of ``high priority'' data structures to the available fast memory. 
+
+
+For instance, Dulloor et al.~\cite{Dulloor:tiering} explore the data placement problem for data-intensive cloud applications such as data stores and graph applications. They 
+observe that the frequency of accesses to a data structure is not sufficient to define the cost by itself. Additional knowledge of the access pattern 
+(sequential, random, pointer chasing) is necessary, as it varies the effective access latency in modern superscalar out-of-order processors. Also, 
+they observe that the density of accesses may not be uniform across the whole data structure size, thus they break the cost calculations on a memory region granularity. 
+In this way, they can place parts of a data structure in a memory component due to restricted available capacity. 
+Similarly, Du Shen et al.~\cite{Shen:dataplacer} perform array-centric cost calculations based on the same observations, using the array size and access distribution, and adding cache reuse tracking for data locality classification. 
+In both cases, the authors are able to establish an ordering of the data structure regions such that the resulting placement in the available fast memory leads to improvements in application performance and efficiency. 
+Pe\~{n}a and Balaji take a different approach by mapping the placement arrangement to the multiple knapsack problem, where the knapsacks are the different memory components of a certain capacity, 
+the weight of the data structures is their size and the value is the number of the load cache misses that they incur~\cite{Pena:knapsack}. Using a small set of HPC applications, they too are able to obtain data layouts that improve performance. 
+
+
+While these efforts are successful in establishing memory allocations which lead to performance gains, they make the assumption that one application can make exclusive use of all the available fast memory. 
+Given the fact that datacenter and exascale systems are shared environments, there needs to be a solution that accounts for different applications running simultaneously, sharing resources 
+and competing for fast memory allocations. Existing solutions can be directly applied in multi-tenant environments, using static memory partitioning schemas. 
+%static because they require offline profiling. 
+However, such techniques trade-off resourse to application fairness. 
+For example, a resource-fair schema will divide the available memory into equal portions for every collocated application, whereas an application-fair layout will split memory into sizes proportional to the 
+overall workload's memory footprint. Additionally, they still do not account for the overall priority of an application against another. The priority can be directly associated with the applications QoS requirements, or it can be established based on its
+sensitivity against execution over slow memory. More specifically, if an application benefits more than others from using fast memory, it should be given priority in allocating data in fast memory. 
+Overall, there are many parameters that need to be addressed, in order to be able to provide performance gains across co-running applications.
+
+
+
+
+%While these efforts are successful in establishing memory allocations which lead to performance gains, we argue that more work is needed to develop efficient methodology for deciding how to span application data across hybrid memories. 
+%The utility of {\em a-priori} profiling of full applications is limited when dealing with dynamic workloads, or when workloads are collocated in shared multi-tenant environments. The profiling complexity increases with application complexity, and it is unclear what effect it will have on the portability of the applications and the development cycle. The expectation that developers would engage in careful analysis of the ideal layout of their data for each workload, is not scalable. Even for domains where ``hero'' programmers are the norm -- such as the HPC domain -- current plans for next generation systems exhibit sufficient differences in the configurations of fast vs.~slow memory~\cite{ascr:facilities}, that programmer-guided placement methods will limit the portability of the codes. 
+%Furthermore, these prior efforts already illustrate some diversity of the factors that guide the decision process --  frequency and density of memory accesses, the cache reuse and the access pattern, data sizes, etc. -- thus begging the question which one(s) are the right ones to consider. 
+%On the other hand, the use of purely low-level, application-agnostic metrics, relies purely on modeling in a complex parameter space comprising multitude of systems-software- and hardware-generated events, where it may be difficult to gain confidence in the derived heuristics. In addition, it does not take advantage of higher-level information that may be available at the application or runtime level. 
+%In summary, it is necessary to establish more practical approaches to how application state should be distributed and re-distributed across the memory substrate in a dynamic manner.  
+%.....
+
+%In addition, these insights can provide for more rapid decisions on how to best leverage slow memory and leave space in the fast memory for more important data structures -- ones which have higher {\em benefit factor}. Such notion of a benefit factor, associated with entire data structures or memory regions, could be useful in establishing future policies for sharing heterogeneous memories across collocated applications. 
+%Motivated by these observations, we investigate the opportunities to reduce or eliminate the reliance on full application profiles in future data management solutions for hybrid memory systems. 
+
+Motivated by these requirements, we investigate the opportunity to enrich the existing data tiering solutions, in order to facilitate efficient data placement in shared environments. 
+We pursue this specifically targeting a wide range of data-intensive scientific application kernels, with goals of providing insights relevant to the HPC community looking to revamp its systems software stacks and toolchains in preparation for the next generation pre-exascale systems with heterogeneous memories, such as ORNL's Summit and LLNL's Sierra. 
+%ANL's Aurora.  -- Aurora as proposed is getting killed, rumors are already out. what will go there instead will be something very different with specialized accelerators but not clear if interesting in terms of memory. 
+We make the following initial observations:
+
+\begin{tightenumerate}
+\item Applications can have varying degrees of sensitivity when accessing data allocated in slower memory components. These can very from high and medium to low and even non-existing. 
+The case of non-sensitive workloads is particularly important as it eliminates the need for offline profiling and data tiering, 
+at least not beyond established benefits related to increasing the aggregate system bandwidth~\cite{Chou:Batman}.  
+\item The contribution of the applications' data structures to the overall performance shows great variability as well. There are cases where computational kernels have dominant 
+data objects, whose allocation to the fast memory is absolutely crucial to the overall application performance. 
+\item The above two observations apply across single as well as multi-threaded application kernels.
+\item Static memory partitioning schemas fail to leverage the full potential of the existing solutions and performance gains, due to possible capacity restrictions and placement cost calculations that are 
+agnostic to the collocation impact. 
+\end{tightenumerate}
+
+
+In fact, the utility of {\em a-priori} profiling of full applications
+%, followed by static partitioning or memory-sharing schemas, 
+%\TD{at this point we haven't said anything for memory sharing techniques so far, so maybe we should just say static partitioning schemas?}
+is limited when dealing with dynamic workloads, particularly when workloads are collocated in shared multi-tenant environments. The profiling complexity increases with application complexity, and it is unclear what effect it will have on the portability of the applications and the development cycle. The expectation that developers would engage in careful analysis of the ideal layout of their data for each workload, is not scalable. Even for domains where ``hero'' programmers are the norm -- such as the HPC domain -- current plans for next generation systems exhibit sufficient differences in the configurations of fast vs.~slow memory~\cite{ascr:facilities}, that programmer-guided placement methods will limit the portability of the codes. 
+By focusing on key application components, that define a big part of the application performance and overall need of fast memory, 
+developers, or future toolchains and dynamic resource managers, can make certain placement decisions more rapidly, potentially expanding additional monitoring and analysis cycles on a much smaller portion of the applications' memory accesses. 
+
+
+Based on these observations, we propose {\bf CoMerge} -- a memory-sharing technique that makes decisions on a data structure level granularity and prioritizes fast memory allocations of performance-critical data across 
+the different applications with respect to their degree of sensitivity to slow memory. 
+CoMerge relies on the novel metric of {\it co-benefit}, that is able to capture the data structure-level contribution to application's performance, as well as the sensitivity of the overall workload to execution over slower memory components.
+%We make the following interesting observations that complement the existing work on generating guidelines for intelligent data placement, 
+%which can be integrated into a future systems-level solution. 
+%\begin{tightenumerate}
+%\item The use of slow memory does not necessarily degrade the performance of every single application. In such cases, 
+%there is no need to perform cost calculations and explicit placement, at least not beyond established benefits related to increasing the aggregate system bandwidth~\cite{Chou:Batman}.  
+%\item In the partial ordering of the data structures, there is a non-linear degradation of the ``weight'' of the data structures' contribution to the application's performance sensitivity to memory. 
+%In fact, we observe that only a small portion of the full set of application data structures truly contribute to the performance sensitivity to memory characteristics.  
+%\item At the level of the application and its algorithms, there is generally fairly clear intuition into which data structures should be weighted higher when considering their prioritization to faster memory. 
+%\end{tightenumerate}
+%These observations are important to be captured as we seek improvements in the data management infrastructure for emerging heterogenous memory systems. 
+Experimental analysis with the Polybench benchmark suite and several CORAL mini apps, show that CoMerge is able to improve performance across all collocated applications, as well as provide high utilization of the shared fast memory.

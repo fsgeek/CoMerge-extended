@@ -1,0 +1,77 @@
+\section{Experimental Methodology}
+\label{sec:methodology}
+
+\noindent{\bf Testbed. }
+All analysis presented in this paper are based on experimental data gathered on a
+testbed emulating 
+a heterogeneous memory environment. 
+The testbed consists of 
+a 12-core dual-socket Intel Xeon platform, with two 4 GB DDR3
+nodes, and 12 MB shared Last Level Cache. We emulate ``slow memory'', referred to as
+SlowMem from here on,  by adjusting
+the latency and bandwidth of one of the DRAM sockets, as done in prior
+research~\cite{Kannan:pVM, sudarsun:isca17}.
+More specifically, we apply thermal throttling to reduce the socket's bandwidth, as well as increase the effective access latency, 
+thus experimenting with various combinations which result in slower access to the specific socket.
+%In this way, we are able to emulate up to 9x lower bandwidth and 5x longer latency, when accessing the SlowMem. 
+We refer to the baseline memory performance based on the other DRAM memory node as FastMem. 
+Table~\ref{tab:throttle} summarizes the latency and bandwidth values, as well as the corresponding approximate 
+factors of bandwidth reduction and latency increase.\\
+
+\begin{table}[t]
+%\vspace{-0.2in}
+\centering
+%\footnotesize
+\begin{tabular}{|p{1.6cm}|p{0.6cm}|p{0.6cm}|p{0.8cm}|p{0.7cm}|p{0.7cm}|p{0.7cm}|}
+\hline
+Factor & B:1 L:1 & B:1 L:2 & B:0.5 L:3 & B:0.25 L:2.5 & B:0.2 L:5 & B:0.15 L:5\\ \hline
+Latency (ns) & 67 & 131 	& 197 		& 174 		& 310 	& 300 \\ \hline
+BW (GB/s) & 11.7 & 11.7 	& 4.9 		& 2.8 		& 2.2 	& 1.7\\ \hline
+\end{tabular}
+\caption{Testbed Bandwidth and Latency values for DRAM (B:1 L:1) and emulated NVM (B:x L:y) of 
+x times reduced bandwidth and y times increased latency.}
+\label{tab:throttle}
+\vspace{-0.3in}
+\end{table}
+
+\noindent{\bf Benchmarks. } 
+We base part of our analysis on the Polybench/C benchmark suite \cite{polybench}, as it provides a big range of representative scientific applications, from linear algebra kernels and solvers, 
+to stencil computations and data mining algorithms. It consists of simple kernels with clear marking, that are being widely used as building components in HPC applications. 
+The original version of the benchmark suite does not support
+multi-threaded execution, but there exist modified versions suitable
+for multicores, GPUs and accelerator environments \cite{polybench:gpu}. For
+brevity, we focus
+the current discussion on the observations made with the
+single-threaded versions of the benchmarks, as they already
+stress the applications' sensitivity to the memory subsystem. 
+
+Additionally, we choose three of the `skeleton benchmarks' in the
+CORAL suite of mini apps \cite{coral:suite}: XSBench \cite{Tramm:wy},
+CLOMP \cite{Bronevetsky:2008} and STREAM \cite{stream}. These are
+benchmarks of significantly bigger size  (in terms of lines of code)
+and they have access patterns that are representative of HPC
+applications. We deploy their OpenMP version, thus extending our
+analysis to multi-threaded applications, as they may have different
+behavior when running over heterogeneous memory subsystems. The
+experiments are done configuring these applications to run as many
+threads as the available cores on the Node, which is 12 in our
+testbed. Brief description of these benchmarks is provided in Section ~\ref{sec:placement}.\\
+
+\noindent{\bf Methodology. } The analyses presented in the paper are
+grouped in two categories. The first group, in Section ~\ref{sec:sensitivity}, describes the overall
+sensitivity analysis for the target applications, as a function of the
+different memory parameters emulated on our testbed. 
+The second group 
+focuses on a subset of applications and performs a deep-dive analysis 
+of how select application components (i.e., data structures)
+contribute to its performance sensitivity (in
+Section~\ref{sec:placement}), and how do collocation and memory
+partitioning techniques impact the overall performance across
+applications (Section~\ref{sec:collocation}). For this second part 
+we configure SlowMem to be accessed with 0.2x the bandwidth and 5x
+the latency of FastMem. Also, for the collocation analysis we further restrict the available FastMem from 4 GB down to e.g. 3 GB or 2 GB, so that the aggregate workload sizes exceed the capacity. The SlowMem is always fixed to 4 GB capacity.
+We use the Linux NUMA API to  
+explicitly allocate memory in FastMem and SlowMem. All application's datasets are not exceeding the available memory on the NUMA sockets, thus they do not result in virtual paging. Finally, the application processes have the same standard execution priority on the Linux platform.
+
+
+

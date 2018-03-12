@@ -1,0 +1,46 @@
+\section{Summary}
+\begin{comment}
+In this work we investigate the need for new tools and policies that can efficiently span and cleverly map application's data 
+across a heterogenous memory substrate. 
+Existing solutions rely on detailed offline profiling of applications' data structures and associated access behaviors, and calculate costs that establish a priority 
+with which a memory object should be allocated in the available FastMem during the online run. However, these tools make the 
+assumption that an application is static and that it can use all the available FastMem.  %which is not the case for applications with dynamic, input-dependent behaviors, or in shared multi-tenant environments.  
+Consequently, the current approaches are limited in their ability to support complex applications with dynamic data-dependent 
+behaviors, or to be used in shared multi-tenant environments. 
+ %Also, they rely on application-level hints as input. 
+Ideally, we would like to have system-level support, that can on-the-fly 
+decide the best data placement, as well as migrate memory objects either when the application itself changes a phase, or when 
+other co-located applications demand to use more of certain memory component. Although there is such support in NUMA systems, 
+these policies are shown not be effective in hybrid memory systems with much larger degree of variability in latency, bandwidth and capacity characteristics~\cite{sudarsun:isca17,bonnie}. 
+
+Our observations after extensive analysis of a representative benchmark suite of the HPC domain, show that there is potential to 
+simplify the existing approaches, so that they can more easily be integrated in dynamic system-level solution. More specifically, we 
+first notice than not all applications are sensitive to memory heterogeneity and second not all application's data 
+structures increase performance when placed in FastMem. Therefore, we propose that we need to shift the efforts from 
+calculating an ordering of the data structures, to determining which ones are critical to performance. In this way, 
+if we can quickly identify the benefit an application overall or some of its data objects have from FastMem allocation, 
+we can significantly reduce the overhead and metadata needed to make online decisions about placement and migrations. 
+For example, in most kernels the data structure that was holding the input data and used in computation, was usually the one 
+that incurred almost 0.9 benefit from being placed in FastMem, due to the significant size and number of accesses received, 
+compared to the rest.  Therefore, as HPC expert programmers and compiler tools try to build cache-friendly access patterns with techniques 
+like dependency analysis and loop unrolling, they could similarly identify such key data structures and forward placement hints to the system-level managers. 
+
+In particular, a system-level solution for dynamic placement and migration of application data should be able to quickly 
+classify if a data object or application overall is sensitive to memory heterogeneity or not. This has a threefold importance. 
+First, it will reduce the complexity of the framework as it can restrict tracking to only the absolutely necessary memory regions, 
+providing a simpler and possibly faster solution. Second, it can actually leverage the use of SlowMem and not treat it as a 
+last option due to the restricted capacity of FastMem, and thus improve overall system cost and efficiency metrics. Finally, the use of a characterization metric such as ``benefit factor'', which normalizes the data structure's 
+or memory region's contribution to sensitivity, can present an opportunity for establishing fairness or SLA guarantees in multi-tenant 
+environments, where all applications will compete for FastMem, thus requiring policies for FastMem partitioning and data migration.  
+%, thus there needs to be a policy that will monitor the 
+%partition of FastMem and respectively migrate data when it is required.
+\end{comment}
+
+In this work we investigate the potential to extend existing data tiering solutions, in order to facilitate efficient data placement and mitigate the performance slowdown across applications in shared heterogenous memory subsytems.
+We propose {\it CoMerge}, a memory-sharing schema that merges per application tierings and a-priori decides the priority placements across applications, with respect to the overall application sensitivity to accesses in slower memory components 
+and the available fast memory capacity. We motivate the need for sensitivity aware decisions, based on the observations that applications or application phases may incur different degrees of slowdown when allocating data in slow memory, as well as the 
+fact that not all applications' data structures contribute equally to the overall execution time. This applies for both single as well multi-threaded applications. We define a per data object {\it co-benefit factor}, which captures the importance of allocating the object in FastMem by observing its contribution to the workload runtime with respect to the overall application sensitivity to slower memory.
+We first experiment with static partitioning schemas, and show that they may fail to maximize the utilization 
+of the available fast memory as well as significantly hurt performance due to un-intelligent data tiering. Then, we show that with CoMerge, a memory sharing policy, we can achieve optimal data tiering across all collocated applications via ordering fast memory allocations according to the object's co-benefit factor. In this way, we achieve high utilization of the shared fast memory and mitigate the slowdown across all collocated applications, even though fairly distributed usage of the fast memory is not guaranteed.\\
+
+\noindent{\bf Acknowledgement. } We thank the anonymous reviewers for their helpful feedback. This work is supported by the Department of Energy, through the ECP SICM and SSIO UNITY projects.

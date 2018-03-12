@@ -1,0 +1,8 @@
+\section{Future Work}
+
+Moving forward, there is great need to diverge from a-priori offline profiling solutions. CoMerge can function under the assumption that 
+applications are profiled and the global tiering is determined, before they can all start executing. This is not the case in the majority of multi-tenant environments, where different users can share resources and 
+execute dynamic workloads at any point of time. Thus, offline profiling and synchronized solutions are very restrictive. This observation further enhances the need for OS-level online solutions, that need to monitor the behavior of 
+applications, focusing on the data structures that are critical to performance, in order to determine sensitivity levels and migrations decisions, so as to maximize the utility and fairly resolve the competition for fast memory allocations 
+across different co-existing kernels. We believe that there can be cross-stack solutions, where application hints or compliler-assisted solutions can help identify the critical to performance data structures and limit the 
+spectrum of the unavoidable OS-level online monitoring infrastructure. 
