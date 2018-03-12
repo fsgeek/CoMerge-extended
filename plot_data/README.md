@@ -13,6 +13,9 @@ python plot_pref+mem.py prefetch.out mem-loads.out
 python plot_ipc.py cpi.out
 ```
 
+### Front-end vs back-end memory stall cycles
+python plot_throttle_stall.py results_throttle_perf_stalls/fast.res results_throttle_perf_stalls/slow_1.res results_throttle_perf_stalls/slow_3.res results_throttle_perf_stalls/slow_5.res results_throttle_perf_stalls/slow_7.res results_throttle_perf_stalls/slow_9.res
+
 ### Plot object benefit factors
 
 `python plot_benefit_2.py`
@@ -28,3 +31,7 @@ python plot_collocation.py
 
 ### Clustering + learning
 `merge_data.py superv_learning.py superv_test.py`
+
+### Parsing pinatrace output from pintool 
+
+Folder `access_patterns` contains the scripts and result figures, without the raw pinatrace output.
