@@ -1,0 +1,240 @@
+
+ Performance counter stats for './linear-algebra/kernels/2mm/2mm_time':
+
+      146508121320      cycles                                                      
+      136200151286      instructions              #    0.93  insns per cycle        
+
+      48.502161040 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/3mm/3mm_time':
+
+       98915887153      cycles                                                      
+       81140316297      instructions              #    0.82  insns per cycle        
+
+      32.600982380 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/atax/atax_time':
+
+         385848607      cycles                                                      
+         297313191      instructions              #    0.77  insns per cycle        
+
+       0.145607376 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/bicg/bicg_time':
+
+       11496568916      cycles                                                      
+        6710751626      instructions              #    0.58  insns per cycle        
+
+       4.021282354 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/cholesky/cholesky_time':
+
+       60086096210      cycles                                                      
+       64175602352      instructions              #    1.07  insns per cycle        
+
+      19.909012970 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/doitgen/doitgen_time':
+
+       33536593677      cycles                                                      
+       34669472030      instructions              #    1.03  insns per cycle        
+
+      11.227032032 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gemm/gemm_time':
+
+       92539278499      cycles                                                      
+       72119309598      instructions              #    0.78  insns per cycle        
+
+      30.519142539 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gemver/gemver_time':
+
+       16731995598      cycles                                                      
+       12457684928      instructions              #    0.74  insns per cycle        
+
+       5.733243079 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gesummv/gesummv_time':
+
+        2912257365      cycles                                                      
+        1669142553      instructions              #    0.57  insns per cycle        
+
+       1.095433107 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/mvt/mvt_time':
+
+       13134984213      cycles                                                      
+        7817757387      instructions              #    0.60  insns per cycle        
+
+       4.557220389 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/symm/symm_time':
+
+      109554619241      cycles                                                      
+       52114635211      instructions              #    0.48  insns per cycle        
+
+      36.342572194 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/syr2k/syr2k_time':
+
+      113301693401      cycles                                                      
+      104130769256      instructions              #    0.92  insns per cycle        
+
+      37.749187938 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/syrk/syrk_time':
+
+       52264754166      cycles                                                      
+       64098619571      instructions              #    1.23  insns per cycle        
+
+      17.350219610 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/trisolv/trisolv_time':
+
+        6920387987      cycles                                                      
+        3201771704      instructions              #    0.46  insns per cycle        
+
+       2.525388598 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/trmm/trmm_time':
+
+      217145045635      cycles                                                      
+      256209019612      instructions              #    1.18  insns per cycle        
+
+      71.255607038 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/durbin/durbin_time':
+
+        3711162306      cycles                                                      
+        1520759853      instructions              #    0.41  insns per cycle        
+
+       1.395800946 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/dynprog/dynprog_time':
+
+      124227568390      cycles                                                      
+      139687364040      instructions              #    1.12  insns per cycle        
+
+      40.880279513 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/gramschmidt/gramschmidt_time':
+
+      102610364328      cycles                                                      
+       60134683823      instructions              #    0.59  insns per cycle        
+
+      34.280816634 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/lu/lu_time':
+
+      113131572212      cycles                                                      
+      149594903004      instructions              #    1.32  insns per cycle        
+
+      37.248188328 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/ludcmp/ludcmp_time':
+
+      361869302929      cycles                                                      
+      160569783621      instructions              #    0.44  insns per cycle        
+
+     118.577956412 seconds time elapsed
+
+
+ Performance counter stats for './datamining/correlation/correlation_time':
+
+      204365836770      cycles                                                      
+       94819231089      instructions              #    0.46  insns per cycle        
+
+      67.073434612 seconds time elapsed
+
+
+ Performance counter stats for './datamining/covariance/covariance_time':
+
+      203766009646      cycles                                                      
+       94783060312      instructions              #    0.47  insns per cycle        
+
+      66.879526299 seconds time elapsed
+
+
+ Performance counter stats for './medley/floyd-warshall/floyd-warshall_time':
+
+      359953651619      cycles                                                      
+      512426986962      instructions              #    1.42  insns per cycle        
+
+     117.937973526 seconds time elapsed
+
+
+ Performance counter stats for './medley/reg_detect/reg_detect_time':
+
+          74863497      cycles                                                      
+         100995317      instructions              #    1.35  insns per cycle        
+
+       0.028674261 seconds time elapsed
+
+
+ Performance counter stats for './stencils/adi/adi_time':
+
+      163878653607      cycles                                                      
+       74699721515      instructions              #    0.46  insns per cycle        
+
+      53.838136895 seconds time elapsed
+
+
+ Performance counter stats for './stencils/fdtd-2d/fdtd-2d_time':
+
+      176352599370      cycles                                                      
+      154464785599      instructions              #    0.88  insns per cycle        
+
+      57.923175998 seconds time elapsed
+
+
+ Performance counter stats for './stencils/fdtd-apml/fdtd-apml_time':
+
+        4203603221      cycles                                                      
+        1506764609      instructions              #    0.36  insns per cycle        
+
+       1.580901071 seconds time elapsed
+
+
+ Performance counter stats for './stencils/jacobi-1d-imper/jacobi-1d-imper_time':
+
+      153660636391      cycles                                                      
+      120123717028      instructions              #    0.78  insns per cycle        
+
+      50.504909037 seconds time elapsed
+
+
+ Performance counter stats for './stencils/jacobi-2d-imper/jacobi-2d-imper_time':
+
+      106415467648      cycles                                                      
+       96634559344      instructions              #    0.91  insns per cycle        
+
+      35.323855739 seconds time elapsed
+
+
+ Performance counter stats for './stencils/seidel-2d/seidel-2d_time':
+
+      102675536089      cycles                                                      
+       48885345429      instructions              #    0.48  insns per cycle        
+
+      33.829316961 seconds time elapsed
+

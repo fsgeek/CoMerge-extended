@@ -1,0 +1,240 @@
+
+ Performance counter stats for './linear-algebra/kernels/2mm/2mm_time':
+
+            864102      LLC-prefetch-misses                                         
+         348388391      LLC-prefetches                                              
+
+      48.114006425 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/3mm/3mm_time':
+
+            797752      LLC-prefetch-misses                                         
+           2221871      LLC-prefetches                                              
+
+      33.012679429 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/atax/atax_time':
+
+           1923803      LLC-prefetch-misses                                         
+           3861489      LLC-prefetches                                              
+
+       0.145410825 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/bicg/bicg_time':
+
+          49820349      LLC-prefetch-misses                                         
+         188021008      LLC-prefetches                                              
+
+       4.102225527 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/cholesky/cholesky_time':
+
+        1194242325      LLC-prefetch-misses                                         
+        1303207561      LLC-prefetches                                              
+
+      15.235274152 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/doitgen/doitgen_time':
+
+           1699364      LLC-prefetch-misses                                         
+           3991071      LLC-prefetches                                              
+
+      11.579927744 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gemm/gemm_time':
+
+            416132      LLC-prefetch-misses                                         
+          65089971      LLC-prefetches                                              
+
+      24.233120380 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gemver/gemver_time':
+
+          96277690      LLC-prefetch-misses                                         
+         291237099      LLC-prefetches                                              
+
+       5.591713671 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gesummv/gesummv_time':
+
+          24977073      LLC-prefetch-misses                                         
+          56799010      LLC-prefetches                                              
+
+       1.096974284 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/mvt/mvt_time':
+
+          47978654      LLC-prefetch-misses                                         
+         172483698      LLC-prefetches                                              
+
+       6.094202717 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/symm/symm_time':
+
+            102803      LLC-prefetch-misses                                         
+           1604934      LLC-prefetches                                              
+
+      33.300874613 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/syr2k/syr2k_time':
+
+        1936460391      LLC-prefetch-misses                                         
+        1973654471      LLC-prefetches                                              
+
+      37.279510183 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/syrk/syrk_time':
+
+         942887779      LLC-prefetch-misses                                         
+         952320676      LLC-prefetches                                              
+
+      16.779154240 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/trisolv/trisolv_time':
+
+          24619462      LLC-prefetch-misses                                         
+          84977227      LLC-prefetches                                              
+
+       2.521951324 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/trmm/trmm_time':
+
+        3902788750      LLC-prefetch-misses                                         
+        3951275971      LLC-prefetches                                              
+
+      56.894974350 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/durbin/durbin_time':
+
+            700338      LLC-prefetch-misses                                         
+          25118635      LLC-prefetches                                              
+
+       1.378189604 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/dynprog/dynprog_time':
+
+         588212102      LLC-prefetch-misses                                         
+         601930042      LLC-prefetches                                              
+
+      36.127735189 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/gramschmidt/gramschmidt_time':
+
+             50710      LLC-prefetch-misses                                         
+           1475718      LLC-prefetches                                              
+
+      33.803057602 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/lu/lu_time':
+
+        2455153247      LLC-prefetch-misses                                         
+        2563064033      LLC-prefetches                                              
+
+      37.232265183 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/ludcmp/ludcmp_time':
+
+         990853835      LLC-prefetch-misses                                         
+        1240480008      LLC-prefetches                                              
+
+     116.615820001 seconds time elapsed
+
+
+ Performance counter stats for './datamining/correlation/correlation_time':
+
+           1143927      LLC-prefetch-misses                                         
+           2340813      LLC-prefetches                                              
+
+      65.034391737 seconds time elapsed
+
+
+ Performance counter stats for './datamining/covariance/covariance_time':
+
+           1115914      LLC-prefetch-misses                                         
+           2332009      LLC-prefetches                                              
+
+      69.955204957 seconds time elapsed
+
+
+ Performance counter stats for './medley/floyd-warshall/floyd-warshall_time':
+
+        7334930077      LLC-prefetch-misses                                         
+        7345226589      LLC-prefetches                                              
+
+     134.165604999 seconds time elapsed
+
+
+ Performance counter stats for './medley/reg_detect/reg_detect_time':
+
+               157      LLC-prefetch-misses                                         
+              2077      LLC-prefetches                                              
+
+       0.028635653 seconds time elapsed
+
+
+ Performance counter stats for './stencils/adi/adi_time':
+
+        2243993206      LLC-prefetch-misses                                         
+        2288522303      LLC-prefetches                                              
+
+      54.451532911 seconds time elapsed
+
+
+ Performance counter stats for './stencils/fdtd-2d/fdtd-2d_time':
+
+        5231672951      LLC-prefetch-misses                                         
+        5277592032      LLC-prefetches                                              
+
+      54.087464175 seconds time elapsed
+
+
+ Performance counter stats for './stencils/fdtd-apml/fdtd-apml_time':
+
+           6368608      LLC-prefetch-misses                                         
+          14721939      LLC-prefetches                                              
+
+       1.578860313 seconds time elapsed
+
+
+ Performance counter stats for './stencils/jacobi-1d-imper/jacobi-1d-imper_time':
+
+        3744312204      LLC-prefetch-misses                                         
+        3757956807      LLC-prefetches                                              
+
+      50.152242424 seconds time elapsed
+
+
+ Performance counter stats for './stencils/jacobi-2d-imper/jacobi-2d-imper_time':
+
+        2477545190      LLC-prefetch-misses                                         
+        2503586990      LLC-prefetches                                              
+
+      34.922302056 seconds time elapsed
+
+
+ Performance counter stats for './stencils/seidel-2d/seidel-2d_time':
+
+         300841082      LLC-prefetch-misses                                         
+         304804887      LLC-prefetches                                              
+
+      33.843469194 seconds time elapsed
+

@@ -1,0 +1,210 @@
+
+ Performance counter stats for './linear-algebra/kernels/2mm/2mm_time':
+
+         601103526      cpu/mem-loads/pp                                            
+
+      59.125312224 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/3mm/3mm_time':
+
+         374397280      cpu/mem-loads/pp                                            
+
+      32.971088226 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/atax/atax_time':
+
+           1692950      cpu/mem-loads/pp                                            
+
+       0.145592917 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/bicg/bicg_time':
+
+          36761205      cpu/mem-loads/pp                                            
+
+       3.858595925 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/cholesky/cholesky_time':
+
+         341319190      cpu/mem-loads/pp                                            
+
+      19.920393956 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/doitgen/doitgen_time':
+
+         162110400      cpu/mem-loads/pp                                            
+
+      11.329446542 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gemm/gemm_time':
+
+         306326455      cpu/mem-loads/pp                                            
+
+      30.027390120 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gemver/gemver_time':
+
+          63248373      cpu/mem-loads/pp                                            
+
+       5.699458843 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/gesummv/gesummv_time':
+
+           8562855      cpu/mem-loads/pp                                            
+
+       1.102844281 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/mvt/mvt_time':
+
+          34020936      cpu/mem-loads/pp                                            
+
+       6.149020386 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/symm/symm_time':
+
+         305310782      cpu/mem-loads/pp                                            
+
+      36.034627113 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/syr2k/syr2k_time':
+
+         592194975      cpu/mem-loads/pp                                            
+
+      37.959492128 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/syrk/syrk_time':
+
+         378791526      cpu/mem-loads/pp                                            
+
+      17.365965339 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/trisolv/trisolv_time':
+
+          11028133      cpu/mem-loads/pp                                            
+
+       2.809047994 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/kernels/trmm/trmm_time':
+
+        1507566306      cpu/mem-loads/pp                                            
+
+      71.483019411 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/durbin/durbin_time':
+
+           5064797      cpu/mem-loads/pp                                            
+
+       1.380138407 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/dynprog/dynprog_time':
+
+         621548881      cpu/mem-loads/pp                                            
+
+      40.695609081 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/gramschmidt/gramschmidt_time':
+
+         319832640      cpu/mem-loads/pp                                            
+
+      33.990683898 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/lu/lu_time':
+
+        1006259883      cpu/mem-loads/pp                                            
+
+      43.402868808 seconds time elapsed
+
+
+ Performance counter stats for './linear-algebra/solvers/ludcmp/ludcmp_time':
+
+         713506540      cpu/mem-loads/pp                                            
+
+     117.967653189 seconds time elapsed
+
+
+ Performance counter stats for './datamining/correlation/correlation_time':
+
+         492015132      cpu/mem-loads/pp                                            
+
+      68.203370179 seconds time elapsed
+
+
+ Performance counter stats for './datamining/covariance/covariance_time':
+
+         491224905      cpu/mem-loads/pp                                            
+
+      66.907729021 seconds time elapsed
+
+
+ Performance counter stats for './medley/floyd-warshall/floyd-warshall_time':
+
+         806960079      cpu/mem-loads/pp                                            
+
+     134.355701097 seconds time elapsed
+
+
+ Performance counter stats for './medley/reg_detect/reg_detect_time':
+
+            534406      cpu/mem-loads/pp                                            
+
+       0.028655593 seconds time elapsed
+
+
+ Performance counter stats for './stencils/adi/adi_time':
+
+         503024951      cpu/mem-loads/pp                                            
+
+      54.353225236 seconds time elapsed
+
+
+ Performance counter stats for './stencils/fdtd-2d/fdtd-2d_time':
+
+        1188467232      cpu/mem-loads/pp                                            
+
+      57.917030078 seconds time elapsed
+
+
+ Performance counter stats for './stencils/fdtd-apml/fdtd-apml_time':
+
+           9390916      cpu/mem-loads/pp                                            
+
+       1.579033439 seconds time elapsed
+
+
+ Performance counter stats for './stencils/jacobi-1d-imper/jacobi-1d-imper_time':
+
+         723414621      cpu/mem-loads/pp                                            
+
+      50.573731154 seconds time elapsed
+
+
+ Performance counter stats for './stencils/jacobi-2d-imper/jacobi-2d-imper_time':
+
+         656034240      cpu/mem-loads/pp                                            
+
+      34.897883420 seconds time elapsed
+
+
+ Performance counter stats for './stencils/seidel-2d/seidel-2d_time':
+
+         177098779      cpu/mem-loads/pp                                            
+
+      33.996656571 seconds time elapsed
+
