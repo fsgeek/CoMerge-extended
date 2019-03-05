@@ -2,8 +2,8 @@ all: my_malloc atax 2mm 3mm bicg cholesky doitgen gemm gemver gesummv mvt symm s
 
 LIB = utilities/lib_my_malloc.a -lnuma
 
-CFLAGS=-ggdb -O0
-#CFLAGS=-O 3
+#CFLAGS=-ggdb -O0
+CFLAGS=-O3
 
 my_malloc:
 	gcc ${CFLAGS} -c utilities/my_malloc.c -o utilities/my_malloc.o
