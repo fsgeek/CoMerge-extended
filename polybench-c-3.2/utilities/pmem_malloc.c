@@ -16,8 +16,8 @@
 // PMEM with the same interface.
 
 
-// const char *pmem_dax_dir = "/mnt/pmem7"; // this is the name of the DAX directory to use for testing.
-const char *pmem_dax_dir = "/tmp"; // this is the name of the DAX directory to use for testing.
+const char *pmem_dax_dir = "/mnt/pmem7/comerge"; // this is the name of the DAX directory to use for testing.
+//const char *pmem_dax_dir = "/tmp"; // this is the name of the DAX directory to use for testing.
 static const size_t pmem_header_size = 4096; // hard code page size.
 
 typedef struct _pmem_dax_header {
