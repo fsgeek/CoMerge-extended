@@ -1,8 +1,6 @@
 #!/usr/bin/gnuplot
-#set terminal wxt persist
-#set terminal wxt size 1500,1000
-set terminal pngcairo size 1500,1000
-set output 'aep-covariance_time-2019_03_28__05_23_07.png'
+set terminal wxt persist
+set terminal wxt size 1500,1000
 set multiplot layout 6, 2
 set xdata time
 set autoscale y

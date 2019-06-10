@@ -1,10 +1,10 @@
 #!/usr/bin/gnuplot
-set terminal pngcairo size 1500,1000
-set output "aep-atax_time-2019_03_28__05_23_07.sh.png"
+set terminal wxt persist
+set terminal wxt size 1500,1000
 set multiplot layout 6, 2
 set xdata time
 set autoscale y
-file="aep-atax_time-2019_03_28__05_23_07.csv"
+file="/mnt/c/Users/TonyMason/Dropbox/tony/research/CoMerge-extended/polybench-c-3.2/aep-atax_time-2019_03_28__05_23_07.csv"
 set timefmt "%s"
 set datafile separator ";"
 set xtics axis rangelimited

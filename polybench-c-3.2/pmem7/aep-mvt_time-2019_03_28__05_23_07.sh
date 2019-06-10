@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot
-set terminal pngcairo size 1500,1000
-set output "aep-mvt_time-2019_03_28__05_23_07.sh.png"
+set terminal wxt persist
+set terminal wxt size 1500,1000
 set multiplot layout 6, 2
 set xdata time
 set autoscale y
@@ -9,20 +9,6 @@ set timefmt "%s"
 set datafile separator ";"
 set xtics axis rangelimited
 set xtics scale 0.5 rotate by 25 offset -3,-0.5
-set title "bytes read (derived)"
-plot \
-file using 1:3 every ::6 title "DIMM 1" with lines, \
-file using 1:16 every ::6 title "DIMM 2" with lines, \
-file using 1:29 every ::6 title "DIMM 3" with lines, \
-file using 1:42 every ::6 title "DIMM 4" with lines, \
-file using 1:55 every ::6 title "DIMM 5" with lines, \
-file using 1:68 every ::6 title "DIMM 6" with lines, \
-file using 1:81 every ::6 title "DIMM 7" with lines, \
-file using 1:94 every ::6 title "DIMM 8" with lines, \
-file using 1:107 every ::6 title "DIMM 9" with lines, \
-file using 1:120 every ::6 title "DIMM 10" with lines, \
-file using 1:133 every ::6 title "DIMM 11" with lines, \
-file using 1:146 every ::6 title "DIMM 12" with lines
 set title "bytes written (derived)"
 plot \
 file using 1:4 every ::6 title "DIMM 1" with lines, \
