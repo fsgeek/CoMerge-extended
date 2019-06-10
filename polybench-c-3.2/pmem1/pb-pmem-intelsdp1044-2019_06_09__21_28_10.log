@@ -1,0 +1,78 @@
+AEPWatch 1 -f ./aep-2mm_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/2mm/2mm_time
+43.750215
+AEPWatch-stop
+AEPWatch 1 -f ./aep-3mm_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/3mm/3mm_time
+27.515370
+AEPWatch-stop
+AEPWatch 1 -f ./aep-atax_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/atax/atax_time
+0.452827
+AEPWatch-stop
+AEPWatch 1 -f ./aep-bicg_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/bicg/bicg_time
+0.552540
+AEPWatch-stop
+AEPWatch 1 -f ./aep-cholesky_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/cholesky/cholesky_time
+17.008958
+AEPWatch-stop
+AEPWatch 1 -f ./aep-doitgen_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/doitgen/doitgen_time
+18.583198
+AEPWatch-stop
+AEPWatch 1 -f ./aep-gemm_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/gemm/gemm_time
+35.444728
+AEPWatch-stop
+AEPWatch 1 -f ./aep-gemver_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/gemver/gemver_time
+7.874004
+AEPWatch-stop
+AEPWatch 1 -f ./aep-gesummv_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/gesummv/gesummv_time
+0.423318
+AEPWatch-stop
+AEPWatch 1 -f ./aep-mvt_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/mvt/mvt_time
+4.804814
+AEPWatch-stop
+AEPWatch 1 -f ./aep-symm_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/symm/symm_time
+60.655200
+AEPWatch-stop
+AEPWatch 1 -f ./aep-syr2k_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/syr2k/syr2k_time
+28.654815
+AEPWatch-stop
+AEPWatch 1 -f ./aep-syrk_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/syrk/syrk_time
+10.407779
+AEPWatch-stop
+AEPWatch 1 -f ./aep-trisolv_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/trisolv/trisolv_time
+0.182326
+AEPWatch-stop
+AEPWatch 1 -f ./aep-trmm_time-2019_06_09__21_28_10.csv
+./linear-algebra/kernels/trmm/trmm_time
+84.053694
+AEPWatch-stop
+AEPWatch 1 -f ./aep-durbin_time-2019_06_09__21_28_10.csv
+./linear-algebra/solvers/durbin/durbin_time
+4.062744
+AEPWatch-stop
+AEPWatch 1 -f ./aep-dynprog_time-2019_06_09__21_28_10.csv
+./linear-algebra/solvers/dynprog/dynprog_time
+63.766709
+AEPWatch-stop
+AEPWatch 1 -f ./aep-gramschmidt_time-2019_06_09__21_28_10.csv
+./linear-algebra/solvers/gramschmidt/gramschmidt_time
+71.584695
+AEPWatch-stop
+AEPWatch 1 -f ./aep-lu_time-2019_06_09__21_28_10.csv
+./linear-algebra/solvers/lu/lu_time
+175.066378
+AEPWatch-stop
+AEPWatch 1 -f ./aep-ludcmp_time-2019_06_09__21_28_10.csv
+./linear-algebra/solvers/ludcmp/ludcmp_time

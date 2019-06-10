@@ -1,0 +1,44 @@
+AEPWatch 1 -f ./aep-ludcmp_time-2019_06_09__23_52_36.csv
+./linear-algebra/solvers/ludcmp/ludcmp_time
+1529.520707
+AEPWatch-stop
+AEPWatch 1 -f ./aep-correlation_time-2019_06_09__23_52_36.csv
+./datamining/correlation/correlation_time
+120.698546
+AEPWatch-stop
+AEPWatch 1 -f ./aep-covariance_time-2019_06_09__23_52_36.csv
+./datamining/covariance/covariance_time
+138.919919
+AEPWatch-stop
+AEPWatch 1 -f ./aep-floyd-warshall_time-2019_06_09__23_52_36.csv
+./medley/floyd-warshall/floyd-warshall_time
+156.335002
+AEPWatch-stop
+AEPWatch 1 -f ./aep-reg_detect_time-2019_06_09__23_52_36.csv
+./medley/reg_detect/reg_detect_time
+311.851312
+AEPWatch-stop
+AEPWatch 1 -f ./aep-adi_time-2019_06_09__23_52_36.csv
+./stencils/adi/adi_time
+53.345839
+AEPWatch-stop
+AEPWatch 1 -f ./aep-fdtd-2d_time-2019_06_09__23_52_36.csv
+./stencils/fdtd-2d/fdtd-2d_time
+45.158168
+AEPWatch-stop
+AEPWatch 1 -f ./aep-fdtd-apml_time-2019_06_09__23_52_36.csv
+./stencils/fdtd-apml/fdtd-apml_time
+0.501363
+AEPWatch-stop
+AEPWatch 1 -f ./aep-jacobi-1d-imper_time-2019_06_09__23_52_36.csv
+./stencils/jacobi-1d-imper/jacobi-1d-imper_time
+251.150908
+AEPWatch-stop
+AEPWatch 1 -f ./aep-jacobi-2d-imper_time-2019_06_09__23_52_36.csv
+./stencils/jacobi-2d-imper/jacobi-2d-imper_time
+19.898531
+AEPWatch-stop
+AEPWatch 1 -f ./aep-seidel-2d_time-2019_06_09__23_52_36.csv
+./stencils/seidel-2d/seidel-2d_time
+29.301066
+AEPWatch-stop
