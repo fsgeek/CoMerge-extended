@@ -574,10 +574,13 @@ def verify_and_update(tfname, node_id, throttle_levels, node_throt_dict, pciid_d
 
 	#Now update the pci device list
 	for node in node_id:
-		if pciid_dict.has_key(node) == False:
-			pciid_dict[node] = scaned_pciid_dict[node]
-		elif len(pciid_dict[node]) !=  len(scaned_pciid_dict[node]):
-			pciid_dict[node] = scaned_pciid_dict[node]
+		try:
+			if pciid_dict.has_key(node) == False:
+				pciid_dict[node] = scaned_pciid_dict[node]
+			elif len(pciid_dict[node]) !=  len(scaned_pciid_dict[node]):
+				pciid_dict[node] = scaned_pciid_dict[node]
+		except:
+			continue
 
 	# create register dictionary. This is the actual data structure
 	# used for updating PCI registers
