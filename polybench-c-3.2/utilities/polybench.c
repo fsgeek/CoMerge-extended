@@ -93,7 +93,7 @@ void polybench_flush_cache()
 #endif
   for (i = 0; i < cs; i++)
     tmp += flush[i];
-  assert (tmp <= 10.0);
+  //assert (tmp <= 10.0);
   free (flush);
 }
 
@@ -381,10 +381,12 @@ void *
 xmalloc (size_t num)
 {
   void* new = NULL;
+  
+  fprintf(stderr, "[PolyBench] posix_memalign: request to allocate %zu\n", num);
   int ret = posix_memalign (&new, 32, num);
   if (! new || ret)
     {
-      fprintf (stderr, "[PolyBench] posix_memalign: cannot allocate memory");
+      fprintf (stderr, "[PolyBench] posix_memalign: cannot allocate memory %zu\n", num);
       exit (1);
     }
   return new;

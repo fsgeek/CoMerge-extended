@@ -1,9 +1,9 @@
-all: my_malloc atax 2mm 3mm bicg cholesky doitgen gemm gemver gesummv mvt symm syr2k syrk trisolv trmm durbin dynprog gramschmidt lu ludcmp correlation covariance floyd-warshall reg_detect adi fdtd-2d fdtd-apml jacobi-1d-imper jacobi-2d-imper seidel-2d
+all: atax 2mm 3mm bicg cholesky doitgen gemm gemver gesummv mvt symm syr2k syrk trisolv trmm durbin dynprog gramschmidt lu ludcmp correlation covariance floyd-warshall reg_detect adi fdtd-2d fdtd-apml jacobi-1d-imper jacobi-2d-imper seidel-2d
 
-LIB = utilities/lib_my_malloc.a #-lnuma
+LIB = utilities/lib_my_malloc.a -lnuma
 
 #CFLAGS=-ggdb -O0
-CFLAGS=-O3
+CFLAGS=-O3 -ggdb
 
 my_malloc:
 	gcc ${CFLAGS} -c utilities/my_malloc.c -o utilities/my_malloc.o
