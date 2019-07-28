@@ -4,7 +4,7 @@ export VMMALLOC_POOL_SIZE=$((64*1024*1024*1024))
 export VMMALLOC_POOL_DIR="/mnt/pmem7/fsgeek"
 
 #LD_PRELOAD=libvmmalloc.so.1 grep "pmem" /proc/mounts
-node=1
+node=0
 timestamp=`date '+%Y_%m_%d__%H_%M_%S'`;
 hostname=`hostname`
 DRAM_FILE="./pb-dram-"$hostname"-"$timestamp".log"
